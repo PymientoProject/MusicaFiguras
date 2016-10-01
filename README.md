@@ -7,6 +7,7 @@ El proyecto consta de un arduino nano, 5 módulos nfc, una raspberry pi. Los mó
 
 ##Instalación
 Los componentes del proyecto son:
+
 | Componente        | Número           |
 | ------------- |:-------------:|
 | Raspberry PI  | x1 |
