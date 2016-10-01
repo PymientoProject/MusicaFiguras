@@ -17,7 +17,7 @@ Los componentes del proyecto son:
 | PCB | x1 |
 | Altavoces | x1 |
 
-Por la parte de la electrónica, el arduino se comunica con los módulos por medio de la librería [rfid](https://github.com/miguelbalboa/rfid). La instalación está en ese repositorio. Luego tenemos que conectar los módulos tal y como se indica en la librería. Metemos el código "codiog de arduino" y conectamos los pines del RX, TX, 5v y GND (del arduino) a los pines de TX, RX, 5v y GND de la (raspberry pi).
+Por la parte de la electrónica, el arduino se comunica con los módulos por medio de la librería [rfid](https://github.com/miguelbalboa/rfid). La instalación está en ese repositorio. Luego tenemos que conectar los módulos tal y como se indica en la librería. Metemos el código /ArduinoScripts/ReadMultiplesRFID y conectamos los pines del RX, TX, 5v y GND (del arduino) a los pines de TX, RX, 5v y GND de la (raspberry pi).
 
 En la raspberry pi tenemos que instalar las dependencias. Primero tenemos que instalr VLC: `apt-get install vlc`
 Luego instalar el binding de VLC en python, que está [aquí](https://github.com/oaubert/python-vlc).
@@ -25,6 +25,10 @@ Instalamos la comunicación serial de las raspberry pi `apt-get install python-s
 
 ##USO 
 Para utilizarlo, tienes que conectar todo como pone anteriormente. Para empezar el programa ejecuta `python Main.py`
+
+Para cambiar los ids de los tags, tienes que hallar el id en Hex, con el script que viene de ejemplo en la librería rifd, y luego cambiar las variables de los ids en el script de arduino.
+
+Para cambiar los audios, metelos en la carpeta audios y ponles los nombres 1.mp3 2 mp3 ..., y si quieres ponerles otro nombre tienes que modificar un poco de código del archivo Main.py
 
 ##Licencia
 Este proyecto está licenciado bajo GPL v3
