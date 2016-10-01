@@ -3,6 +3,8 @@ Repositorio que aloja todo el código del proyecto "MúsicaFiguras" que es parte
 
 El proyecto consta de un arduino nano, 5 módulos nfc, una raspberry pi. Los módulos nfc se comunican con el arduino por medio de SPI, el arduino le pasa los datos a las raspberry pi por serial, y la raspi pone los audios.
 
+[![Video demostración](https://img.youtube.com/vi/0RvY7xLZidY/0.jpg)](https://www.youtube.com/watch?v=0RvY7xLZidY)
+
 ##Instalación
 Los componentes del proyecto son:
 | Componente        | Número           |
