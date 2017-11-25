@@ -4,6 +4,7 @@ import CustomVLCClass
 import serial
 import time
 import sys
+import os
 
 '''This script mute or unmute audio files with nfc and tags. In my case, I have 5 NFC modules and 6 tags, when i put a tag in a module, the raspberry pi starts playing the song that is associated to the tag, with this method we can create a "DJ" table.
 The arduino sends to the raspberry pi, via serial, when we enter a tag and when we take out the tag:
@@ -18,6 +19,7 @@ The arduino sends to the raspberry pi, via serial, when we enter a tag and when 
 
 print("empieza")
 
+dir_path = os.path.dirname(os.path.realpath(__file__))
 numOfNFC = 6    #The number of NFC we have
 numOfTags = 8   #The number of tags we have, IMPORTANT we must have the equal amount of tags and audios
 
@@ -50,7 +52,7 @@ while True:
     try:
         vlcObj = []  # The vlc obj for playing the songs
         for audio in range(numOfTags):
-            vlcObj.append(CustomVLCClass.CustomVLCClass(filename=("/audio/" + str(audio + 1)) + ".mp3"))
+            vlcObj.append(CustomVLCClass.CustomVLCClass(filename=(dir_path + "/audio/" + str(audio + 1)) + ".mp3"))
 
         for nfc in range(
                 numOfNFC):  # The program is continually looping, so when the songs finish we have to start playing the songs associated to the tags that are in the nfc. If we don't do this, when the program start another time, the songs are muted even if there are tags in the nfc's
